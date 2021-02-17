@@ -25,10 +25,14 @@ function showPomoNotif(){
     //Set the title, icon, and body for the creation of the notification
     let title = "Productoro";
     let body = "Your break has ended. A new pomo begins now :)";
-    let icon = 'https://static.wikia.nocookie.net/five-nights-at-treasure-island-rp/images/9/9d/Tomato.png/revision/latest/scale-to-width-down/280?cb=20180329214250';
+    let icon = 'https://media.istockphoto.com/photos/tomato-isolated-on-white-background-picture-id466175630?k=6&m=466175630&s=612x612&w=0&h=fu_mQBjGJZIliOWwCR0Vf2myRvKWyQDsymxEIi8tZ38=';
 
     //Create the notification and it automatically displays
-    let workNotif = new Notification(title,{body, icon});    
+    let workNotif = new Notification(title,{body, icon});
+    //After 5 seconds close the notification
+    setTimeout(() => {
+        workNotif.close()
+        }, 5000);    
 }
 
 /**
@@ -42,10 +46,14 @@ function showLongBreakNotif(){
     //Set the title, icon, and body for the creation of the notification
     let title = "Productoro";
     let body = "You have completed a pomo! Your long break begins now :)";
-    let icon = 'https://static.wikia.nocookie.net/five-nights-at-treasure-island-rp/images/9/9d/Tomato.png/revision/latest/scale-to-width-down/280?cb=20180329214250';
+    let icon = 'https://media.istockphoto.com/photos/tomato-isolated-on-white-background-picture-id466175630?k=6&m=466175630&s=612x612&w=0&h=fu_mQBjGJZIliOWwCR0Vf2myRvKWyQDsymxEIi8tZ38=';
 
     //Create the notification and it automatically displays
-    let workNotif = new Notification(title,{body, icon});    
+    let workNotif = new Notification(title,{body, icon});
+    //After 5 seconds close the notification
+    setTimeout(() => {
+        workNotif.close()
+        }, 5000);    
 }
 
 /**
@@ -59,10 +67,14 @@ function showShortBreakNotif(){
     //Set the title, icon, and body for the creation of the notification
     let title = "Productoro";
     let body = "You have completed a pomo! Your short break begins now :)";
-    let icon = 'https://static.wikia.nocookie.net/five-nights-at-treasure-island-rp/images/9/9d/Tomato.png/revision/latest/scale-to-width-down/280?cb=20180329214250';
+    let icon = 'https://media.istockphoto.com/photos/tomato-isolated-on-white-background-picture-id466175630?k=6&m=466175630&s=612x612&w=0&h=fu_mQBjGJZIliOWwCR0Vf2myRvKWyQDsymxEIi8tZ38=';
 
     //Create the notification and it automatically displays
     let workNotif = new Notification(title,{body, icon});
+    //After 5 seconds close the notification
+    setTimeout(() => {
+        workNotif.close()
+        }, 5000);
 }
 
 /**
