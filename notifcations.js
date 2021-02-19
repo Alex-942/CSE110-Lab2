@@ -78,6 +78,42 @@ function showShortBreakNotif(){
 }
 
 /**
+ * Function name: showNotif
+ * Description: displays banner to notify the user which state has just finished 
+ * @param {string} typeOfNotif: describes what notification we should create and display. Depending
+ *                              on its typeOfNotif, the notifcation body will have different text 
+ *                              correspodning to typeOfNotif
+ * @return none 
+ */
+
+function showNotif(typeOfNotif){
+    //Set the title, icon, and body for the creation of the notification
+    let title = "Productoro";
+    let icon = 'https://media.istockphoto.com/photos/tomato-isolated-on-white-background-picture-id466175630?k=6&m=466175630&s=612x612&w=0&h=fu_mQBjGJZIliOWwCR0Vf2myRvKWyQDsymxEIi8tZ38=';
+    //set body to some default vaule to be filled in later
+    let body = "";
+    //depending on typeOfNotif we will set the body of the notifcation to have different text
+    if(typeOfNotif === "longBreak"){
+        //when it is a long break then the body says the following
+        body = "You have completed a pomo! Your long break begins now :)";
+    }
+    else if(typeOfNotif === "shortBreak"){
+        //when it is a short break then the body says the following
+        body = "You have completed a pomo! Your short break begins now :)";
+    }
+    else if(typeOfNotif === "pomo"){
+        //when a new pomo starts then the body says the following
+        body = "Your break has ended. A new pomo begins now :)";
+    }
+    //Create the notification with the values above and it automatically displays
+    let workNotif = new Notification(title,{body, icon});
+    //After 5 seconds close the notification
+    setTimeout(() => {
+        workNotif.close()
+        }, 5000);
+}
+
+/**
  * Function name: getNotificationStatus
  * Description: gets the notifaction preferences of user or asks for preferences if not yet set
  * @param none
