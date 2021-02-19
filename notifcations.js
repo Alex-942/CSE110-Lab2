@@ -13,70 +13,7 @@ var alarm = new Audio('https://actions.google.com/sounds/v1/alarms/alarm_clock.o
     //Play the alarm
     alarm.play();
  }
-
-/**
- * Function name: showPomoNotif
- * Description: displays banner to notify user that their break is over and a new pomo begins 
- * @param none
- * @return none
- */
-
-function showPomoNotif(){
-    //Set the title, icon, and body for the creation of the notification
-    let title = "Productoro";
-    let body = "Your break has ended. A new pomo begins now :)";
-    let icon = 'https://media.istockphoto.com/photos/tomato-isolated-on-white-background-picture-id466175630?k=6&m=466175630&s=612x612&w=0&h=fu_mQBjGJZIliOWwCR0Vf2myRvKWyQDsymxEIi8tZ38=';
-
-    //Create the notification and it automatically displays
-    let workNotif = new Notification(title,{body, icon});
-    //After 5 seconds close the notification
-    setTimeout(() => {
-        workNotif.close()
-        }, 5000);    
-}
-
-/**
- * Function name: showLongBreakNotif
- * Description: displays banner to notify user that the pomo is over and their long break begins 
- * @param none
- * @return none
- */
-
-function showLongBreakNotif(){
-    //Set the title, icon, and body for the creation of the notification
-    let title = "Productoro";
-    let body = "You have completed a pomo! Your long break begins now :)";
-    let icon = 'https://media.istockphoto.com/photos/tomato-isolated-on-white-background-picture-id466175630?k=6&m=466175630&s=612x612&w=0&h=fu_mQBjGJZIliOWwCR0Vf2myRvKWyQDsymxEIi8tZ38=';
-
-    //Create the notification and it automatically displays
-    let workNotif = new Notification(title,{body, icon});
-    //After 5 seconds close the notification
-    setTimeout(() => {
-        workNotif.close()
-        }, 5000);    
-}
-
-/**
- * Function name: showShortBreakNotif
- * Description: displays banner to notify user that the pomo is over and their short break begins 
- * @param none
- * @return none 
- */
-
-function showShortBreakNotif(){
-    //Set the title, icon, and body for the creation of the notification
-    let title = "Productoro";
-    let body = "You have completed a pomo! Your short break begins now :)";
-    let icon = 'https://media.istockphoto.com/photos/tomato-isolated-on-white-background-picture-id466175630?k=6&m=466175630&s=612x612&w=0&h=fu_mQBjGJZIliOWwCR0Vf2myRvKWyQDsymxEIi8tZ38=';
-
-    //Create the notification and it automatically displays
-    let workNotif = new Notification(title,{body, icon});
-    //After 5 seconds close the notification
-    setTimeout(() => {
-        workNotif.close()
-        }, 5000);
-}
-
+ 
 /**
  * Function name: showNotif
  * Description: displays banner to notify the user which state has just finished 
