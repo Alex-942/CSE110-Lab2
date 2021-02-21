@@ -3,6 +3,18 @@ var alarm = new Audio('https://actions.google.com/sounds/v1/alarms/alarm_clock.o
 
 
 /**
+ * Function name: getAlarm
+ * Description: returns the alarm audio object for testing purposes
+ * @param none
+ * @return returns the Audio element named alarm
+ */
+
+function getAlarm(){
+    //Play the alarm
+    return alarm;
+ }
+
+/**
  * Function name: playSound
  * Description: plays tone to notfiy the user that the break or pomo has ended 
  * @param none
@@ -20,7 +32,7 @@ var alarm = new Audio('https://actions.google.com/sounds/v1/alarms/alarm_clock.o
  * @param {string} typeOfNotif: describes what notification we should create and display. Depending
  *                              on its typeOfNotif, the notifcation body will have different text 
  *                              correspodning to typeOfNotif
- * @return none 
+ * @return {string} the message body of the notifcation we just displayed on screen 
  */
 
 function showNotif(typeOfNotif){
@@ -42,12 +54,17 @@ function showNotif(typeOfNotif){
         //when a new pomo starts then the body says the following
         body = "Your break has ended. A new pomo begins now :)";
     }
-    //Create the notification with the values above and it automatically displays
-    let workNotif = new Notification(title,{body, icon});
-    //After 5 seconds close the notification
-    setTimeout(() => {
-        workNotif.close()
-        }, 5000);
+
+    if (typeof Notification !== 'undefined') {
+        //Create the notification with the values above and it automatically displays
+        let workNotif = new Notification(title,{body, icon});
+        //After 5 seconds close the notification
+        setTimeout(() => {
+            workNotif.close()
+            }, 5000);
+    }
+
+    return body;
 }
 
 /**
@@ -92,3 +109,6 @@ function getNotificationStatus(){
         return false;
     }
 }
+
+
+module.exports = {showNotif, getNotificationStatus, playSound, getAlarm};
